@@ -129,6 +129,7 @@ import io.github.thebusybiscuit.slimefun4.implementation.items.food.Juice;
 import io.github.thebusybiscuit.slimefun4.implementation.items.food.MagicSugar;
 import io.github.thebusybiscuit.slimefun4.implementation.items.food.MeatJerky;
 import io.github.thebusybiscuit.slimefun4.implementation.items.food.MonsterJerky;
+import io.github.thebusybiscuit.slimefun4.implementation.items.food.Soul;
 import io.github.thebusybiscuit.slimefun4.implementation.items.geo.GEOMiner;
 import io.github.thebusybiscuit.slimefun4.implementation.items.geo.GEOScanner;
 import io.github.thebusybiscuit.slimefun4.implementation.items.geo.OilPump;
@@ -208,7 +209,9 @@ import io.github.thebusybiscuit.slimefun4.implementation.items.tools.TapeMeasure
 import io.github.thebusybiscuit.slimefun4.implementation.items.weapons.ExplosiveBow;
 import io.github.thebusybiscuit.slimefun4.implementation.items.weapons.IcyBow;
 import io.github.thebusybiscuit.slimefun4.implementation.items.weapons.SeismicAxe;
+import io.github.thebusybiscuit.slimefun4.implementation.items.weapons.SoulStealingSword;
 import io.github.thebusybiscuit.slimefun4.implementation.items.weapons.SwordOfBeheading;
+import io.github.thebusybiscuit.slimefun4.implementation.items.weapons.SoulStealingSword;
 import io.github.thebusybiscuit.slimefun4.implementation.items.weapons.VampireBlade;
 import io.github.thebusybiscuit.slimefun4.utils.ColoredMaterial;
 import io.github.thebusybiscuit.slimefun4.utils.HeadTexture;
@@ -240,6 +243,13 @@ public final class SlimefunItemSetup {
         
         new SlimefunItem(itemGroups.weapons, SlimefunItems.GRANDPAS_WALKING_STICK, RecipeType.ENHANCED_CRAFTING_TABLE,
         new ItemStack[] {new ItemStack(Material.LEATHER), new ItemStack(Material.OAK_LOG), new ItemStack(Material.LEATHER), null, new ItemStack(Material.OAK_LOG), null, null, new ItemStack(Material.OAK_LOG), null})
+        .register(plugin);
+
+        new SlimefunItem(itemGroups.weapons, SlimefunItems.SOUL_STICK, RecipeType.ENHANCED_CRAFTING_TABLE,
+        new ItemStack[] {new ItemStack(Material.ENDER_PEARL), new ItemStack(Material.SPIDER_EYE), new ItemStack(Material.SLIME_BALL), new ItemStack(Material.BLAZE_ROD), new ItemStack(Material.STICK), new ItemStack(Material.BONE), new ItemStack(Material.ROTTEN_FLESH), new ItemStack(Material.IRON_INGOT), new ItemStack(Material.GUNPOWDER)})
+        .register(plugin);
+        new SlimefunItem(itemGroups.weapons, SlimefunItems.SOUL_STICK, RecipeType.ENHANCED_CRAFTING_TABLE,
+        new ItemStack[] {null, null, null, null, SlimefunItems.SOUL, null, null, SlimefunItems.SOUL, null})
         .register(plugin);
 
         new PortableCrafter(itemGroups.usefulItems, SlimefunItems.PORTABLE_CRAFTER, RecipeType.ENHANCED_CRAFTING_TABLE,
@@ -379,6 +389,14 @@ public final class SlimefunItemSetup {
 
         new SwordOfBeheading(itemGroups.weapons, SlimefunItems.SWORD_OF_BEHEADING, RecipeType.ENHANCED_CRAFTING_TABLE,
         new ItemStack[] {null, new ItemStack(Material.EMERALD), null, SlimefunItems.MAGIC_LUMP_2, new ItemStack(Material.EMERALD), SlimefunItems.MAGIC_LUMP_2, null, new ItemStack(Material.BLAZE_ROD), null})
+        .register(plugin);
+
+        new SoulStealingSword(itemGroups.weapons, SlimefunItems.SOUL_STEALING_SWORD, RecipeType.ENCHANCED_CRAFTING_TABLE,
+        new ItemStack[] {null, new ItemStack(Material.WITHER_SKELETON_SKULL), null, null, new ItemStack(Material.WITHER_SKELETON_SKULL), null, null, SlimefunItems.SOUL_STICK, null})
+        .register(plugin);
+
+        new Soul(itemGroups.food, SlimefunItems.SOUL, RecipeType.GRIND_STONE,
+        new ItemStack[] {new ItemStack(SlimefunItems.SOUL_STICK), null, null, null, null, null, null, null, null})
         .register(plugin);
 
         new SlimefunItem(itemGroups.magicalResources, SlimefunItems.MAGICAL_BOOK_COVER, RecipeType.ENHANCED_CRAFTING_TABLE,

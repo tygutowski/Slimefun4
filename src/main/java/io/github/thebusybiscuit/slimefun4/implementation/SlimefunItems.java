@@ -159,6 +159,7 @@ public final class SlimefunItems {
     public static final SlimefunItemStack FISH_JERKY = new SlimefunItemStack("FISH_JERKY", Material.COOKED_COD, "&6Fish Jerky", "", "&fExtra saturating!");
 
     public static final SlimefunItemStack KELP_COOKIE = new SlimefunItemStack("KELP_COOKIE", Material.COOKIE, "&2Kelp Cookie");
+    public static final SlimefunItemStack SOUL = new SlimefunItemStack("SOUL", Material.BLAZE_POWDER, "&4Soul", "", "&cDo you dare consume it...?");
 
     /* Christmas */
     public static final SlimefunItemStack CHRISTMAS_MILK = new SlimefunItemStack("CHRISTMAS_MILK", Color.WHITE, new PotionEffect(PotionEffectType.SATURATION, 4, 0), "&6Glass of Milk", "", LoreBuilder.hunger(2.5));
@@ -186,6 +187,8 @@ public final class SlimefunItems {
     public static final SlimefunItemStack SWORD_OF_BEHEADING = new SlimefunItemStack("SWORD_OF_BEHEADING", Material.IRON_SWORD, "&6Sword of Beheading", "&7Beheading II", "", "&fHas a chance to behead Mobs", "&f(even a higher chance for Wither Skeletons)");
     public static final SlimefunItemStack BLADE_OF_VAMPIRES = new SlimefunItemStack("BLADE_OF_VAMPIRES", Material.GOLDEN_SWORD, "&cBlade of Vampires", "&7Life Steal I", "", "&fEverytime you attack something", "&fyou have a 45% chance to", "&frecover 2 Hearts of your Health");
     public static final SlimefunItemStack SEISMIC_AXE = new SlimefunItemStack("SEISMIC_AXE", Material.IRON_AXE, "&aSeismic Axe", "", "&7&oA portable Earthquake...", "", LoreBuilder.RIGHT_CLICK_TO_USE);
+    public static final SlimefunItemStack SOUL_STICK = new SlimefunItemStack("SOUL_STICK", Material.BLAZE_ROD, "&9Soul Stick");
+    public static final SlimefunItemStack SOUL_STEALING_SWORD = new SlimefunItemStack("SOUL_STEALING_SWORD", Material.NETHERITE_SWORD, "&cSoul Stealing Sword", "&7Soul-Rend", "", "&fSteal souls from mobs you kill")
 
     static {
         GRANDMAS_WALKING_STICK.addUnsafeEnchantment(Enchantment.KNOCKBACK, 2);
@@ -194,6 +197,8 @@ public final class SlimefunItems {
         BLADE_OF_VAMPIRES.addUnsafeEnchantment(Enchantment.FIRE_ASPECT, 2);
         BLADE_OF_VAMPIRES.addUnsafeEnchantment(Enchantment.DURABILITY, 4);
         BLADE_OF_VAMPIRES.addUnsafeEnchantment(Enchantment.DAMAGE_ALL, 2);
+
+        SOUL_STICK.addUnsafeEnchantment(Enchantment.DAMAGE_UNDEAD, 2)
     }
 
     /* Bows */
