@@ -211,6 +211,8 @@ import io.github.thebusybiscuit.slimefun4.implementation.items.weapons.IcyBow;
 import io.github.thebusybiscuit.slimefun4.implementation.items.weapons.SeismicAxe;
 import io.github.thebusybiscuit.slimefun4.implementation.items.weapons.SoulStealingSword;
 import io.github.thebusybiscuit.slimefun4.implementation.items.weapons.SwordOfBeheading;
+import io.github.thebusybiscuit.slimefun4.implementation.items.weapons.ZeusLightning;
+import io.github.thebusybiscuit.slimefun4.implementation.items.weapons.EnderWand;
 import io.github.thebusybiscuit.slimefun4.implementation.items.weapons.SoulStealingSword;
 import io.github.thebusybiscuit.slimefun4.implementation.items.weapons.VampireBlade;
 import io.github.thebusybiscuit.slimefun4.utils.ColoredMaterial;
@@ -1210,7 +1212,15 @@ public final class SlimefunItemSetup {
         new SeismicAxe(itemGroups.weapons, SlimefunItems.SEISMIC_AXE, RecipeType.MAGIC_WORKBENCH,
         new ItemStack[] {SlimefunItems.HARDENED_METAL_INGOT, SlimefunItems.HARDENED_METAL_INGOT, null, SlimefunItems.HARDENED_METAL_INGOT, SlimefunItems.STAFF_ELEMENTAL, null, null, SlimefunItems.STAFF_ELEMENTAL, null})
         .register(plugin);
+        
+        new ZeusLightning(itemGroups.weapons, SlimefunItems.ZEUS_LIGHTNING, RecipeType.MAGIC_WORKBENCH,
+        new ItemStack[] {Material.TRIDENT, Material.GOLD_INGOT, null, Material.GOLD_INGOT, Material.GOLD_INGOT, null, null, null, null})
+        .register(plugin);
 
+        new EnderWand(itemGroups.weapons, SlimefunItems.ENDER_WAND, RecipeType.MAGIC_WORKBENCH,
+        new ItemStack[] {SlimefunItems.SOUL_STICK, Material.ENDER_EYE, null, Material.ENDER_PEARL, Material.ENDER_EYE, null, null, null, null})
+        .register(plugin);
+        
         new PickaxeOfVeinMining(itemGroups.tools, SlimefunItems.PICKAXE_OF_VEIN_MINING, RecipeType.MAGIC_WORKBENCH,
         new ItemStack[] {new ItemStack(Material.EMERALD_ORE), SlimefunItems.SYNTHETIC_DIAMOND, new ItemStack(Material.EMERALD_ORE), null, SlimefunItems.GILDED_IRON, null, null, SlimefunItems.GILDED_IRON, null})
         .register(plugin);
