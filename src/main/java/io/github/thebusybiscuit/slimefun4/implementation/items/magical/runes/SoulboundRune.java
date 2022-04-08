@@ -67,7 +67,6 @@ public class SoulboundRune extends SimpleSlimefunItem<ItemDropHandler> {
         if (!rune.isValid()) {
             return;
         }
-
         Location l = rune.getLocation();
         Collection<Entity> entites = l.getWorld().getNearbyEntities(l, RANGE, RANGE, RANGE, this::findCompatibleItem);
         Optional<Entity> optional = entites.stream().findFirst();
@@ -81,7 +80,7 @@ public class SoulboundRune extends SimpleSlimefunItem<ItemDropHandler> {
                 l.getWorld().strikeLightningEffect(l);
 
                 Slimefun.runSync(() -> {
-                    // Being sure entities are still valid and not picked up or whatsoever.
+                    // Being sure entities are still valid and not picked up or disabled.
                     if (rune.isValid() && item.isValid() && itemStack.getAmount() == 1) {
 
                         l.getWorld().createExplosion(l, 0);

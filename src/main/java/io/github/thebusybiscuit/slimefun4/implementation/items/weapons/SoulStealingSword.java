@@ -23,7 +23,7 @@ import io.github.thebusybiscuit.slimefun4.api.items.settings.IntRangeSetting;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.handlers.EntityKillHandler;
 import io.github.thebusybiscuit.slimefun4.implementation.items.SimpleSlimefunItem;
-import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems.SOUL;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 
 /**
  * The {@link SoulStealingSword} is a special kind of sword which allows you to obtain
@@ -42,7 +42,7 @@ public class SoulStealingSword extends SimpleSlimefunItem<EntityKillHandler> {
     private final ItemSetting<Integer> chanceDropSoul = new IntRangeSetting(this, "chance.DROP_SOUL", 0, 100, 100);
 
     @ParametersAreNonnullByDefault
-    public SwordOfBeheading(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
+    public SoulStealingSword(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
         super(itemGroup, item, recipeType, recipe);
 
         addItemSetting(chanceDropSoul);
@@ -51,6 +51,7 @@ public class SoulStealingSword extends SimpleSlimefunItem<EntityKillHandler> {
     @Override
     public EntityKillHandler getItemHandler() {
         return (e, entity, killer, item) -> {
+			Random random = ThreadLocalRandom.current();
             switch (e.getEntityType()) {
                 case AXOLOTL:
                 case BAT:
@@ -107,7 +108,6 @@ public class SoulStealingSword extends SimpleSlimefunItem<EntityKillHandler> {
                 case SPIDER:
                 case SQUID:
                 case STRAY:
-                case SPIDER:
                 case TRADER_LLAMA:
                 case TROPICAL_FISH:
                 case TURTLE:
@@ -124,7 +124,7 @@ public class SoulStealingSword extends SimpleSlimefunItem<EntityKillHandler> {
                 case ZOMBIE_VILLAGER:
                 case ZOMBIFIED_PIGLIN:
                     if (random.nextInt(100) < chanceDropSoul.getValue()) {
-                        e.getDrops().add(SOUL);
+                        e.getDrops().add(SlimefunItems.SOUL);
                     }
                     break;
                 default:

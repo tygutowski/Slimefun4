@@ -188,7 +188,7 @@ public final class SlimefunItems {
     public static final SlimefunItemStack BLADE_OF_VAMPIRES = new SlimefunItemStack("BLADE_OF_VAMPIRES", Material.GOLDEN_SWORD, "&cBlade of Vampires", "&7Life Steal I", "", "&fEverytime you attack something", "&fyou have a 45% chance to", "&frecover 2 Hearts of your Health");
     public static final SlimefunItemStack SEISMIC_AXE = new SlimefunItemStack("SEISMIC_AXE", Material.IRON_AXE, "&aSeismic Axe", "", "&7&oA portable Earthquake...", "", LoreBuilder.RIGHT_CLICK_TO_USE);
     public static final SlimefunItemStack SOUL_STICK = new SlimefunItemStack("SOUL_STICK", Material.BLAZE_ROD, "&9Soul Stick");
-    public static final SlimefunItemStack SOUL_STEALING_SWORD = new SlimefunItemStack("SOUL_STEALING_SWORD", Material.NETHERITE_SWORD, "&cSoul Stealing Sword", "&7Soul-Rend", "", "&fSteal souls from mobs you kill")
+    public static final SlimefunItemStack SOUL_STEALING_SWORD = new SlimefunItemStack("SOUL_STEALING_SWORD", Material.NETHERITE_SWORD, "&cSoul Stealing Sword", "&7Soul-Rend", "", "&fSteal souls from mobs you kill");
 
     static {
         GRANDMAS_WALKING_STICK.addUnsafeEnchantment(Enchantment.KNOCKBACK, 2);
@@ -198,7 +198,7 @@ public final class SlimefunItems {
         BLADE_OF_VAMPIRES.addUnsafeEnchantment(Enchantment.DURABILITY, 4);
         BLADE_OF_VAMPIRES.addUnsafeEnchantment(Enchantment.DAMAGE_ALL, 2);
 
-        SOUL_STICK.addUnsafeEnchantment(Enchantment.DAMAGE_UNDEAD, 2)
+        SOUL_STICK.addUnsafeEnchantment(Enchantment.DAMAGE_UNDEAD, 2);
     }
 
     /* Bows */

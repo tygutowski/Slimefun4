@@ -246,9 +246,6 @@ public final class SlimefunItemSetup {
         .register(plugin);
 
         new SlimefunItem(itemGroups.weapons, SlimefunItems.SOUL_STICK, RecipeType.ENHANCED_CRAFTING_TABLE,
-        new ItemStack[] {new ItemStack(Material.ENDER_PEARL), new ItemStack(Material.SPIDER_EYE), new ItemStack(Material.SLIME_BALL), new ItemStack(Material.BLAZE_ROD), new ItemStack(Material.STICK), new ItemStack(Material.BONE), new ItemStack(Material.ROTTEN_FLESH), new ItemStack(Material.IRON_INGOT), new ItemStack(Material.GUNPOWDER)})
-        .register(plugin);
-        new SlimefunItem(itemGroups.weapons, SlimefunItems.SOUL_STICK, RecipeType.ENHANCED_CRAFTING_TABLE,
         new ItemStack[] {null, null, null, null, SlimefunItems.SOUL, null, null, SlimefunItems.SOUL, null})
         .register(plugin);
 
@@ -391,12 +388,12 @@ public final class SlimefunItemSetup {
         new ItemStack[] {null, new ItemStack(Material.EMERALD), null, SlimefunItems.MAGIC_LUMP_2, new ItemStack(Material.EMERALD), SlimefunItems.MAGIC_LUMP_2, null, new ItemStack(Material.BLAZE_ROD), null})
         .register(plugin);
 
-        new SoulStealingSword(itemGroups.weapons, SlimefunItems.SOUL_STEALING_SWORD, RecipeType.ENCHANCED_CRAFTING_TABLE,
+        new SoulStealingSword(itemGroups.weapons, SlimefunItems.SOUL_STEALING_SWORD, RecipeType.ENHANCED_CRAFTING_TABLE,
         new ItemStack[] {null, new ItemStack(Material.WITHER_SKELETON_SKULL), null, null, new ItemStack(Material.WITHER_SKELETON_SKULL), null, null, SlimefunItems.SOUL_STICK, null})
         .register(plugin);
 
-        new Soul(itemGroups.food, SlimefunItems.SOUL, RecipeType.GRIND_STONE,
-        new ItemStack[] {new ItemStack(SlimefunItems.SOUL_STICK), null, null, null, null, null, null, null, null})
+        new Soul(itemGroups.food, SlimefunItems.SOUL, RecipeType.ENHANCED_CRAFTING_TABLE,
+        new ItemStack[] {new ItemStack(Material.ENDER_PEARL), new ItemStack(Material.SPIDER_EYE), new ItemStack(Material.SLIME_BALL), new ItemStack(Material.BLAZE_ROD), new ItemStack(Material.WITHER_SKELETON_SKULL), new ItemStack(Material.BONE), new ItemStack(Material.ROTTEN_FLESH), new ItemStack(Material.IRON_INGOT), new ItemStack(Material.GUNPOWDER)})
         .register(plugin);
 
         new SlimefunItem(itemGroups.magicalResources, SlimefunItems.MAGICAL_BOOK_COVER, RecipeType.ENHANCED_CRAFTING_TABLE,
