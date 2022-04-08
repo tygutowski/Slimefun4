@@ -36,7 +36,7 @@ package io.github.thebusybiscuit.slimefun4.implementation.items.weapons;
 	import io.github.thebusybiscuit.slimefun4.utils.WorldUtils;
 
 	/**
-	 * The {@link ZeusLightning} is an interesting weapon. It spawns ghostly block entities in a straight line
+	 * The {@link EnderWand} is an interesting weapon. It spawns ghostly block entities in a straight line
 	 * when right-clicked. These blocks launch up from the ground and damage any {@link LivingEntity} in its way.
 	 * It is quite similar to a shockwave. It is akin to a powerful lightning bolt destroying everything in sight.
 	 * 
@@ -98,6 +98,14 @@ package io.github.thebusybiscuit.slimefun4.implementation.items.weapons;
 	        };
 	    }
 
+	    @ParametersAreNonnullByDefault
+		private void createJumpingBlock(Block ground, Block blockAbove, int index) {
+			Location loc = ground.getRelative(BlockFace.UP).getLocation().add(0.5, 0.0, 0.5);
+			FallingBlock block = ground.getWorld().spawnFallingBlock(loc, ground.getBlockData());
+			block.setDropItem(false);
+			block.setVelocity(new Vector(0, 0.4 + index * 0.01, 0));
+			block.setMetadata("ZeusLightning", new FixedMetadataValue(Slimefun.instance(), "fake_block"));
+		}
 	   
 	    @ParametersAreNonnullByDefault
 	    private boolean canReach(Location playerLocation, Location entityLocation, Location groundLocation) {
@@ -127,8 +135,24 @@ package io.github.thebusybiscuit.slimefun4.implementation.items.weapons;
 	    }
 
 	   
+		private @Nonnull Block findGround(@Nonnull Block b) {
+			if (b.getType() == Material.AIR) {
+				int minHeight = WorldUtils.getMinHeight(b.getWorld());
+				for (int y = 0; b.getY() - y > minHeight; y++) {
+					Block block = b.getRelative(0, -y, 0);
+
+					if (block.getType() != Material.AIR) {
+						return block;
+					}
+				}
+			}
+
+			return b;
+		}
+
 
 	    @Override
 	    public boolean isDamageable() {
 	        return true;
 	    }
+	}

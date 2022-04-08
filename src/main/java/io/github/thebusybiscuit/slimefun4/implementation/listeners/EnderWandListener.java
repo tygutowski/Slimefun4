@@ -21,9 +21,9 @@ import io.github.thebusybiscuit.slimefun4.implementation.items.weapons.EnderWand
  */
 public class EnderWandListener implements Listener {
 
-    private final EnderWand enderWand;
+    private EnderWand enderWand;
 
-    public ZeusLightningListener(@Nonnull Slimefun plugin, @Nonnull EnderWand enderWand) {
+    public EnderWandListener(@Nonnull Slimefun plugin, @Nonnull EnderWand enderWand) {
         plugin.getServer().getPluginManager().registerEvents(this, plugin);
         this.enderWand = enderWand;
     }
