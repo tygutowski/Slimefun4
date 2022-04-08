@@ -189,7 +189,9 @@ public final class SlimefunItems {
     public static final SlimefunItemStack SEISMIC_AXE = new SlimefunItemStack("SEISMIC_AXE", Material.IRON_AXE, "&aSeismic Axe", "", "&7&oA portable Earthquake...", "", LoreBuilder.RIGHT_CLICK_TO_USE);
     public static final SlimefunItemStack SOUL_STICK = new SlimefunItemStack("SOUL_STICK", Material.BLAZE_ROD, "&9Soul Stick");
     public static final SlimefunItemStack SOUL_STEALING_SWORD = new SlimefunItemStack("SOUL_STEALING_SWORD", Material.NETHERITE_SWORD, "&cSoul Stealing Sword", "&7Soul-Rend", "", "&fSteal souls from mobs you kill");
-
+    public static final SlimefunItemStack ZEUS_LIGHTNING = new SlimefunItemStack("ZEUS_LIGHTNING", Material.TRIDENT, "&cZeus' Lightning", "&7Soul-Rend", "", "&fGet that bolt!")
+    public static final SlimefunItemStack ENDER_WAND = new SlimefunItemStack("ENDER_WAND", Material.BLAZE_ROD, "&cEnder Wand", "&7Soul-Rend", "", "&fGet out!")
+    
     static {
         GRANDMAS_WALKING_STICK.addUnsafeEnchantment(Enchantment.KNOCKBACK, 2);
         GRANDPAS_WALKING_STICK.addUnsafeEnchantment(Enchantment.KNOCKBACK, 5);
