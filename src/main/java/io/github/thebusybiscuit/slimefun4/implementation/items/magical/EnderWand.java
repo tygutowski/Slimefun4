@@ -158,6 +158,6 @@ package io.github.thebusybiscuit.slimefun4.implementation.items.weapons;
 	/* Method that informs the game that this item is damageable, either by explosion, lava or wear and tear. */
 		@Override
 	    public boolean isDamageable() {
-	        return true;
+	        return false;
 	    }
 	}

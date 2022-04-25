@@ -104,7 +104,9 @@ public class ZeusLightning extends SimpleSlimefunItem<ItemUseHandler> implements
                     // @formatter:on
                 }
             }
-
+			Block ground = findGround(blocks.get(blocks.size()-1));
+			Location lightningLocation = ground.getLocation();
+			ground.getWorld().strikeLightning(lightningLocation);
             for (int i = 0; i < 4; i++) {
                 damageItem(p, e.getItem());
             }
