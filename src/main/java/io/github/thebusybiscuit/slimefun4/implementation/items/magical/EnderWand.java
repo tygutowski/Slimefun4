@@ -36,15 +36,20 @@ package io.github.thebusybiscuit.slimefun4.implementation.items.weapons;
 	import io.github.thebusybiscuit.slimefun4.utils.WorldUtils;
 
 	/**
-	 * The {@link EnderWand} is an interesting weapon. It spawns ghostly block entities in a straight line
-	 * when right-clicked. These blocks launch up from the ground and damage any {@link LivingEntity} in its way.
-	 * It is quite similar to a shockwave. It is akin to a powerful lightning bolt destroying everything in sight.
+	 * The {@link EnderWand} is a very interesting magical weapon. It stems from the an Ender eye, which
+	 * has the ability to teleport the user anywhere they wish to throw it, or a mob, if the user uses it 
+	 * against it. Once a right click is made, such entity will vanish and appear at a random location.
 	 * 
 	 * @author Giulio Martini
 	 *
 	 */
+	/* The following parameters are used to describe the effect the ender wand will have on its sorroundings. More specifically, the physical impact
+	* of its effects (STRENGTH), its vertical range (HEIGHT), the damage caused by the item (DAMAGE), the minimum and maximum range it has to impact
+	other entities (MIN_PLAYER_DISTANCE and MAX_GROUND_DISTANCE) and its radial range (RANGE). */
 	public class EnderWand extends SimpleSlimefunItem<ItemUseHandler> implements NotPlaceable, DamageableItem {
-
+	/* It can be observed that the Ender wand does not damage any entity, but only affects them in a way that will be described later. 
+	* It possesses a wide radial range.
+	*/
 	    private static final float STRENGTH = 0F;
 	    private static final float HEIGHT = 0.3F;
 	    private static final float DAMAGE = 0;
@@ -56,8 +61,8 @@ package io.github.thebusybiscuit.slimefun4.implementation.items.weapons;
 	    public EnderWand(ItemGroup itemGroup, SlimefunItemStack item, RecipeType recipeType, ItemStack[] recipe) {
 	        super(itemGroup, item, recipeType, recipe);
 	    }
-
-	    @Override
+	/* Method that recalls the handler for this specific object. */
+		@Override
 	    public ItemUseHandler getItemHandler() {
 	        return e -> {
 	            Player p = e.getPlayer();
@@ -150,8 +155,8 @@ package io.github.thebusybiscuit.slimefun4.implementation.items.weapons;
 			return b;
 		}
 
-
-	    @Override
+	/* Method that informs the game that this item is damageable, either by explosion, lava or wear and tear. */
+		@Override
 	    public boolean isDamageable() {
 	        return true;
 	    }
