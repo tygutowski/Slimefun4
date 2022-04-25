@@ -36,15 +36,23 @@ import io.github.thebusybiscuit.slimefun4.implementation.items.SimpleSlimefunIte
 import io.github.thebusybiscuit.slimefun4.utils.WorldUtils;
 
 /**
- * The {@link SeismicAxe} is an interesting weapon. It spawns ghostly block entities in a straight line
- * when right-clicked. These blocks launch up from the ground and damage any {@link LivingEntity} in its way.
- * It is quite similar to a shockwave.
- * 
- * @author TheBusyBiscuit
+ * The {@link ZeusLightning} is one interesting magical item. It holds the purpose of launching
+ * every mob in the vicinty several blocks away, while shaking the ground beneath it
+ * very much like an actual lightning, however, this is the almighty Zeus' lightning,
+ * so it is even more powerful.
+ * @author gmartini2019
  *
  */
+
+/* Declaration of the class as a Slime fun item, which is damageable */
 public class ZeusLightning extends SimpleSlimefunItem<ItemUseHandler> implements NotPlaceable, DamageableItem {
 
+    /**
+    * This parameters are in place to determine the characteristics of the item, such as the effect it will have on its sorrounding
+    * and on the enemies (STRENGTH), its vertical range (HEIGHT), the damage done to each individual enemy (DAMAGE), the minimum
+    * distance and the max distance that it can affect entities (MIN_PLAYER_DISTANCE and MAX_GROUND_DISTANCE) and its overall 
+    * radius of range (RANGE).
+    */
     private static final float STRENGTH = 2.0F;
     private static final float HEIGHT = 2.0F;
     private static final float DAMAGE = 18;
@@ -57,6 +65,11 @@ public class ZeusLightning extends SimpleSlimefunItem<ItemUseHandler> implements
         super(itemGroup, item, recipeType, recipe);
     }
 
+    /*
+    * This method is used to call upon the item's handler, which is an entierely different class.
+    * It details the ways the item interacts with the world around it.
+    */
+    
     @Override
     public ItemUseHandler getItemHandler() {
         return e -> {
@@ -98,6 +111,9 @@ public class ZeusLightning extends SimpleSlimefunItem<ItemUseHandler> implements
         };
     }
 
+    /* 'createJumpingBlock' is a method used to make the ground beneath, ahead, on the side and behind the player
+    * shake and rumble. This is done by making the affected blocks jump up and down, making any entity follow.
+    */
     @ParametersAreNonnullByDefault
     private void createJumpingBlock(Block ground, Block blockAbove, int index) {
         Location loc = ground.getRelative(BlockFace.UP).getLocation().add(0.5, 0.0, 0.5);
@@ -107,6 +123,8 @@ public class ZeusLightning extends SimpleSlimefunItem<ItemUseHandler> implements
         block.setMetadata("ZeusLightning", new FixedMetadataValue(Slimefun.instance(), "fake_block"));
     }
 
+    /* Calculates if the block or entity the player is trying to effect is in range. */
+    
     @ParametersAreNonnullByDefault
     private boolean canReach(Location playerLocation, Location entityLocation, Location groundLocation) {
         // Too far away from ground
@@ -121,6 +139,9 @@ public class ZeusLightning extends SimpleSlimefunItem<ItemUseHandler> implements
         // @formatter:on
     }
 
+    /* If the object, or entity, is in range, it will create a pushing effect by virtue of an invisible
+    * vector between the player and the entity
+    */
     @ParametersAreNonnullByDefault
     private void pushEntity(Player p, Entity entity) {
        
@@ -147,7 +168,7 @@ public class ZeusLightning extends SimpleSlimefunItem<ItemUseHandler> implements
             }
         
     }
-
+/* finds the group upon which to strike on. */
     private @Nonnull Block findGround(@Nonnull Block b) {
         if (b.getType() == Material.AIR) {
             int minHeight = WorldUtils.getMinHeight(b.getWorld());
@@ -163,6 +184,9 @@ public class ZeusLightning extends SimpleSlimefunItem<ItemUseHandler> implements
         return b;
     }
 
+/* 'isDamageable' determines whether an object is damageable either by explosion, or by wear and tear.
+* In this case, it is.
+*/
     @Override
     public boolean isDamageable() {
         return true;
